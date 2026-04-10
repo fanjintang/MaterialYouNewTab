@@ -31,6 +31,21 @@ const fa = {
     todoListHover: "لیست کارها",
     todoPlaceholder: "افزودن کار...",
 
+    // Pomodoro
+    "pomodoroText": "پومودورو",
+    "pomodoroInfo": "نمایش تایمر پومودورو",
+    "pomodoroHover": "پومودورو",
+    "pomodoroHeading": "پومودورو",
+    "pomodoroStart": "شروع",
+    "pomodoroPause": "توقف",
+    "pomodoroReset": "بازنشانی",
+    "pomodoroSkip": "رد کردن",
+    "pomodoroWork": "زمان تمرکز",
+    "pomodoroShortBreak": "استراحت کوتاه",
+    "pomodoroLongBreak": "استراحت بلند",
+    "pomodoroSettings": "تنظیمات تایمر",
+    "pomodoroMinutes": "دقیقه",
+
     // Clock
     hideClockBox: "پنهان کردن ساعت",
     hideClockBoxInfo: "پنهان کردن ساعت و تاریخ",

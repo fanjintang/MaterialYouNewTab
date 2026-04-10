@@ -29,6 +29,21 @@ const np = {
     "todoListHover": "गर्नुपर्ने कार्यहरु",
     "todoPlaceholder": "गर्नु पर्ने काम थप्नुहोस...",
 
+    // Pomodoro
+    "pomodoroText": "पोमोडोरो",
+    "pomodoroInfo": "पोमोडोरो टाइमर देखाउनुहोस",
+    "pomodoroHover": "पोमोडोरो",
+    "pomodoroHeading": "पोमोडोरो",
+    "pomodoroStart": "सुरु गर्नुहोस",
+    "pomodoroPause": "रोक्नुहोस",
+    "pomodoroReset": "रीसेट गर्नुहोस",
+    "pomodoroSkip": "छोड्नुहोस",
+    "pomodoroWork": "केन्द्रित समय",
+    "pomodoroShortBreak": "छोटो ब्रेक",
+    "pomodoroLongBreak": "लामो ब्रेक",
+    "pomodoroSettings": "टाइमर सेटिङहरू",
+    "pomodoroMinutes": "मिनेट",
+
     // Digital Clock
     "digitalclocktitle": "डिजिटल घडी",
     "digitalclockinfo": "डिजिटल घडीमा परिवर्तन गर्नुहोस्",

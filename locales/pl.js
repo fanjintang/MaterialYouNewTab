@@ -29,6 +29,21 @@ const pl = {
     "todoListHover": "Lista zadań",
     "todoPlaceholder": "Dodaj zadanie...",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Pokaż timer Pomodoro",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Start",
+    "pomodoroPause": "Pauza",
+    "pomodoroReset": "Reset",
+    "pomodoroSkip": "Pomiń",
+    "pomodoroWork": "Czas skupienia",
+    "pomodoroShortBreak": "Krótka przerwa",
+    "pomodoroLongBreak": "Długa przerwa",
+    "pomodoroSettings": "Ustawienia timera",
+    "pomodoroMinutes": "minut",
+
     // Clock
     "hideClockBox": "Ukryj zegar",
     "hideClockBoxInfo": "Ukryj zegar i datę",

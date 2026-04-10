@@ -29,6 +29,21 @@ const tr = {
     "todoListHover": "Yapılacaklar",
     "todoPlaceholder": "Görev ekle",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Pomodoro zamanlayıcısını göster",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Başlat",
+    "pomodoroPause": "Duraklat",
+    "pomodoroReset": "Sıfırla",
+    "pomodoroSkip": "Atla",
+    "pomodoroWork": "Odaklanma süresi",
+    "pomodoroShortBreak": "Kısa mola",
+    "pomodoroLongBreak": "Uzun mola",
+    "pomodoroSettings": "Zamanlayıcı ayarları",
+    "pomodoroMinutes": "dakika",
+
     // Digital Clock
     "digitalclocktitle": "Dijital Saat",
     "digitalclockinfo": "Dijital saate geçiş yap",

@@ -37,6 +37,21 @@ const es = {
     "todoListHover": "Lista de tareas",
     "todoPlaceholder": "Añadir tarea...",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Mostrar temporizador Pomodoro",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Iniciar",
+    "pomodoroPause": "Pausar",
+    "pomodoroReset": "Reiniciar",
+    "pomodoroSkip": "Saltar",
+    "pomodoroWork": "Tiempo de enfoque",
+    "pomodoroShortBreak": "Descanso corto",
+    "pomodoroLongBreak": "Descanso largo",
+    "pomodoroSettings": "Configuración del temporizador",
+    "pomodoroMinutes": "minutos",
+
     // Clock
     "hideClockBox": "Ocultar Reloj",
     "hideClockBoxInfo": "Ocultar reloj y fecha",

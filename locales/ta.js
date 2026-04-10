@@ -29,6 +29,21 @@ const ta = {
     "todoListHover": "செய்ய வேண்டிய பட்டியல்",
     "todoPlaceholder": "பணியைச் சேர்...",
 
+    // Pomodoro
+    "pomodoroText": "போமோடோரோ",
+    "pomodoroInfo": "போமோடோரோ நேரமானியைக் காட்டு",
+    "pomodoroHover": "போமோடோரோ",
+    "pomodoroHeading": "போமோடோரோ",
+    "pomodoroStart": "தொடங்கு",
+    "pomodoroPause": "இடைநிறுத்து",
+    "pomodoroReset": "மீட்டமை",
+    "pomodoroSkip": "தவிர்",
+    "pomodoroWork": "கவனம் நேரம்",
+    "pomodoroShortBreak": "குறுகிய இடைவேளை",
+    "pomodoroLongBreak": "நீண்ட இடைவேளை",
+    "pomodoroSettings": "நேரமானி அமைப்புகள்",
+    "pomodoroMinutes": "நிமிடங்கள்",
+
     // Clock
     "hideClockBox": "கடிகாரத்தை மறை",
     "hideClockBoxInfo": "கடிகாரத்தையும் தேதியையும் மறை",

@@ -39,6 +39,7 @@
     <script defer src="scripts/ai-tools.js"></script>
     <script defer src="scripts/bookmarks.js"></script>
     <script defer src="scripts/todo-list.js"></script>
+    <script defer src="scripts/pomodoro.js"></script>
     <script defer src="scripts/google-apps.js"></script>
     <script defer src="scripts/voice-search.js"></script>
     <script defer src="scripts/backup-restore.js"></script>
@@ -105,6 +106,64 @@
         </div>
         <ul class="todolist" id="todoullist">
         </ul>
+    </div>
+
+    <!-- --------------------- Pomodoro Timer --------------------- -->
+    <!-- Pomodoro Icon -->
+    <div class="pomodoroCont" id="pomodoroCont" style="display: none;">
+        <svg id="pomodoroIcon" xmlns="http://www.w3.org/2000/svg" class="dot-icon" width="36" height="36" viewBox="0 0 24 24">
+            <circle cx="12" cy="13" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="12" y1="13" x2="12" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="13" x2="15" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <!-- Text to appear on hover -->
+        <span class="tooltip-text" id="pomodoroHover">Pomodoro</span>
+    </div>
+
+    <!-- Centered Icon Container -->
+    <div id="pomodoroContainer" class="pomodoro-container" style="display: none;">
+        <h2 id="pomodoroHeading">Pomodoro</h2>
+        <div class="pomodoro-timer-display">
+            <span id="pomodoroTimeDisplay">25:00</span>
+        </div>
+        <div class="pomodoro-indicators" id="pomodoroWorkIndicators">
+            <span class="pomodoro-indicator"></span>
+            <span class="pomodoro-indicator"></span>
+            <span class="pomodoro-indicator"></span>
+        </div>
+        <span class="pomodoro-mode-label" id="pomodoroModeLabel">Focus Time</span>
+        <div class="pomodoro-controls">
+            <button id="pomodoroStartPauseBtn" class="pomodoro-btn pomodoro-btn-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><rect class="accentColor aiDarkIcons" width="100%" height="100%" rx="5"/><g style="transform: scale(0.5); transform-origin: center;"><polygon points="5 3 19 12 5 21 5 3"/></g></svg>
+                <span>Start</span>
+            </button>
+            <button id="pomodoroResetBtn" class="pomodoro-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><rect class="accentColor aiDarkIcons" width="100%" height="100%" rx="5"/><g style="transform: scale(0.5); transform-origin: center;"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></g></svg>
+                <span>Reset</span>
+            </button>
+        </div>
+        <button id="pomodoroSkipBtn" class="pomodoro-btn pomodoro-btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><rect class="accentColor aiDarkIcons" width="100%" height="100%" rx="5"/><g style="transform: scale(0.5); transform-origin: center;"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></g></svg>
+            <span>Skip</span>
+        </button>
+        <div class="pomodoro-settings">
+            <h3 id="pomodoroSettingsHeading">Timer Settings</h3>
+            <div class="pomodoro-setting-row">
+                <label for="pomodoroWorkInput" id="pomodoroWorkLabel">Focus Time</label>
+                <input type="number" id="pomodoroWorkInput" min="1" max="120" value="25">
+                <span id="pomodoroWorkUnit">minutes</span>
+            </div>
+            <div class="pomodoro-setting-row">
+                <label for="pomodoroShortBreakInput" id="pomodoroShortBreakLabel">Short Break</label>
+                <input type="number" id="pomodoroShortBreakInput" min="1" max="60" value="5">
+                <span id="pomodoroShortBreakUnit">minutes</span>
+            </div>
+            <div class="pomodoro-setting-row">
+                <label for="pomodoroLongBreakInput" id="pomodoroLongBreakLabel">Long Break</label>
+                <input type="number" id="pomodoroLongBreakInput" min="1" max="60" value="15">
+                <span id="pomodoroLongBreakUnit">minutes</span>
+            </div>
+        </div>
     </div>
 
     <!-- --------------------- Bookmark System --------------------- -->
@@ -1362,6 +1421,17 @@
                                         </div>
                                         <label class="switch">
                                             <input id="todoListCheckbox" type="checkbox">
+                                            <span class="toggle"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="ttcont" id="pomodoroHidden">
+                                        <div class="texts">
+                                            <div class="bigText" id="pomodoroText">Pomodoro</div>
+                                            <div class="infoText" id="pomodoroInfo">Show a Pomodoro timer</div>
+                                        </div>
+                                        <label class="switch">
+                                            <input id="pomodoroCheckbox" type="checkbox">
                                             <span class="toggle"></span>
                                         </label>
                                     </div>

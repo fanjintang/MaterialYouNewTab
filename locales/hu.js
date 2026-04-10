@@ -28,6 +28,21 @@ const hu = {
     "todoListHover": "Teendő lista",
     "todoPlaceholder": "Feladat hozzáadása...",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Pomodoro időzítő megjelenítése",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Indítás",
+    "pomodoroPause": "Szünet",
+    "pomodoroReset": "Újraindítás",
+    "pomodoroSkip": "Kihagyás",
+    "pomodoroWork": "Fókuszidő",
+    "pomodoroShortBreak": "Rövid szünet",
+    "pomodoroLongBreak": "Hosszú szünet",
+    "pomodoroSettings": "Időzítő beállítások",
+    "pomodoroMinutes": "perc",
+
     // Digital Clock
     "digitalclocktitle": "Digitális óra",
     "digitalclockinfo": "Váltás a digitális órára",

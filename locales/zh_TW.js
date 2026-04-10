@@ -29,6 +29,21 @@ const zh_TW = {
     "todoListHover": "待辦清單",
     "todoPlaceholder": "新增任務...",
 
+    // Pomodoro
+    "pomodoroText": "番茄鐘",
+    "pomodoroInfo": "顯示番茄鐘計時器",
+    "pomodoroHover": "番茄鐘",
+    "pomodoroHeading": "番茄鐘",
+    "pomodoroStart": "開始",
+    "pomodoroPause": "暫停",
+    "pomodoroReset": "重設",
+    "pomodoroSkip": "跳過",
+    "pomodoroWork": "專注時間",
+    "pomodoroShortBreak": "短休息",
+    "pomodoroLongBreak": "長休息",
+    "pomodoroSettings": "計時器設定",
+    "pomodoroMinutes": "分鐘",
+
     // Clock
     "hideClockBox": "隱藏時鐘",
     "hideClockBoxInfo": "顯示或隱藏時鐘和日期",

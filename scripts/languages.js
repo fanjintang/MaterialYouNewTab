@@ -232,7 +232,19 @@ function applyLanguage(lang) {
         "searchSectionTitle",
         "weatherSectionTitle",
         "appearanceSectionTitle",
-        "settingsSectionTitle"
+        "settingsSectionTitle",
+        "pomodoroText",
+        "pomodoroInfo",
+        "pomodoroHover",
+        "pomodoroHeading",
+        "pomodoroStart",
+        "pomodoroPause",
+        "pomodoroReset",
+        "pomodoroSkip",
+        "pomodoroWork",
+        "pomodoroShortBreak",
+        "pomodoroLongBreak",
+        "pomodoroSettings"
     ];
 
     // Specific mapping for placeholders
@@ -269,6 +281,12 @@ function applyLanguage(lang) {
         { id: "editBookmarkNameLabel", key: "editBookmarkName" },
         { id: "editBookmarkURLLabel", key: "editBookmarkURL" },
         { id: "shortcutsSectionTitle", key: "shortcutsText" },
+        { id: "pomodoroWorkLabel", key: "pomodoroWork" },
+        { id: "pomodoroShortBreakLabel", key: "pomodoroShortBreak" },
+        { id: "pomodoroLongBreakLabel", key: "pomodoroLongBreak" },
+        { id: "pomodoroWorkUnit", key: "pomodoroMinutes" },
+        { id: "pomodoroShortBreakUnit", key: "pomodoroMinutes" },
+        { id: "pomodoroLongBreakUnit", key: "pomodoroMinutes" },
     ];
 
     // Function to apply translations

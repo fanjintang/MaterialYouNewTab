@@ -29,6 +29,21 @@ const sl = {
     "todoListHover": "Seznam opravil",
     "todoPlaceholder": "Dodaj nalogo...",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Prikaži časovnik Pomodoro",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Začni",
+    "pomodoroPause": "Premor",
+    "pomodoroReset": "Ponastavi",
+    "pomodoroSkip": "Preskoči",
+    "pomodoroWork": "Čas koncentracije",
+    "pomodoroShortBreak": "Kratek odmor",
+    "pomodoroLongBreak": "Dolg odmor",
+    "pomodoroSettings": "Nastavitve časovnika",
+    "pomodoroMinutes": "minut",
+
     // Digital Clock
     "digitalclocktitle": "Digitalna ura",
     "digitalclockinfo": "Preklopi na digitalno uro",

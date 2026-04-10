@@ -29,6 +29,21 @@ const ko = {
     "todoListHover": "할 일",
     "todoPlaceholder": "할 일 추가...",
 
+    // Pomodoro
+    "pomodoroText": "뽀모도로",
+    "pomodoroInfo": "뽀모도로 타이머 표시",
+    "pomodoroHover": "뽀모도로",
+    "pomodoroHeading": "뽀모도로",
+    "pomodoroStart": "시작",
+    "pomodoroPause": "일시정지",
+    "pomodoroReset": "초기화",
+    "pomodoroSkip": "건너뛰기",
+    "pomodoroWork": "집중 시간",
+    "pomodoroShortBreak": "짧은 휴식",
+    "pomodoroLongBreak": "긴 휴식",
+    "pomodoroSettings": "타이머 설정",
+    "pomodoroMinutes": "분",
+
     // Clock
     "hideClockBox": "시계 숨기기",
     "hideClockBoxInfo": "시계와 날짜 숨기기",

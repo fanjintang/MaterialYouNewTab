@@ -27,6 +27,21 @@ const mr = {
     "todoListHover": "कार्य सूची",
     "todoPlaceholder": "कार्य जोडा...",
 
+    // Pomodoro
+    "pomodoroText": "पोमोडोरो",
+    "pomodoroInfo": "पोमोडोरो टाइमर दाखवा",
+    "pomodoroHover": "पोमोडोरो",
+    "pomodoroHeading": "पोमोडोरो",
+    "pomodoroStart": "सुरू करा",
+    "pomodoroPause": "विराम",
+    "pomodoroReset": "रीसेट करा",
+    "pomodoroSkip": "वगळा",
+    "pomodoroWork": "एकाग्रता वेळ",
+    "pomodoroShortBreak": "छोटा विरा",
+    "pomodoroLongBreak": "मोठा विरा",
+    "pomodoroSettings": "टाइमर सेटिंग्ज",
+    "pomodoroMinutes": "मिनिटे",
+
     // Digital Clock
     "digitalclocktitle": "डिजिटल घड्याळ",
     "digitalclockinfo": "डिजिटल घड्याळावर स्विच करा",

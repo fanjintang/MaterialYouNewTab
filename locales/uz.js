@@ -37,6 +37,21 @@ const uz = {
     "todoListHover": "Vazifalar",
     "todoPlaceholder": "Vazifa qo'shish...",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Pomodoro taymerini ko'rsatish",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Boshlash",
+    "pomodoroPause": "To'xtatish",
+    "pomodoroReset": "Qayta o'rnatish",
+    "pomodoroSkip": "O'tkazib yuborish",
+    "pomodoroWork": "Diqqat vaqti",
+    "pomodoroShortBreak": "Qisqa tanaffus",
+    "pomodoroLongBreak": "Uzoq tanaffus",
+    "pomodoroSettings": "Taymer sozlamalari",
+    "pomodoroMinutes": "daqiqa",
+
 
     // Clock
     "hideClockBox": "Soatni yashirish",

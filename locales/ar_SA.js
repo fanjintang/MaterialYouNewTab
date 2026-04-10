@@ -31,6 +31,21 @@ const ar_SA = {
     todoListHover: "قائمة المهام",
     todoPlaceholder: "أضف مهمة...",
 
+    // Pomodoro
+    "pomodoroText": "بومودورو",
+    "pomodoroInfo": "إظهار مؤقت بومودورو",
+    "pomodoroHover": "بومودورو",
+    "pomodoroHeading": "بومودورو",
+    "pomodoroStart": "ابدأ",
+    "pomodoroPause": "إيقاف مؤقت",
+    "pomodoroReset": "إعادة تعيين",
+    "pomodoroSkip": "تخطي",
+    "pomodoroWork": "وقت التركيز",
+    "pomodoroShortBreak": "استراحة قصيرة",
+    "pomodoroLongBreak": "استراحة طويلة",
+    "pomodoroSettings": "إعدادات المؤقت",
+    "pomodoroMinutes": "دقائق",
+
     // Clock
     hideClockBox: "إخفاء الساعة",
     hideClockBoxInfo: "إخفاء الساعة والتاريخ",

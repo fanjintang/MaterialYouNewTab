@@ -29,6 +29,21 @@ const uk = {
     "todoListHover": "Список справ",
     "todoPlaceholder": "Додати задачу...",
 
+    // Pomodoro
+    "pomodoroText": "Помодоро",
+    "pomodoroInfo": "Показати таймер Помодоро",
+    "pomodoroHover": "Помодоро",
+    "pomodoroHeading": "Помодоро",
+    "pomodoroStart": "Старт",
+    "pomodoroPause": "Пауза",
+    "pomodoroReset": "Скинути",
+    "pomodoroSkip": "Пропустити",
+    "pomodoroWork": "Час фокусування",
+    "pomodoroShortBreak": "Коротка перерва",
+    "pomodoroLongBreak": "Довга перерва",
+    "pomodoroSettings": "Налаштування таймера",
+    "pomodoroMinutes": "хвилин",
+
     // Clock
     "hideClockBox": "Приховати годинник",
     "hideClockBoxInfo": "Приховати годинник і дату",

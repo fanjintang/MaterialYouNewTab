@@ -370,6 +370,7 @@ body[data-bg="wallpaper"][sysTheme="systemDark"]:has(
 /* Styling for the SVG icon */
 .dot-icon {
 	fill: var(--darkColor-blue);
+	color: var(--darkColor-blue);
 	/* Icon color */
 	background-color: var(--accentLightTint-blue);
 	border-radius: 25%;
@@ -4537,6 +4538,15 @@ body[data-bg="wallpaper"] .dropdown-content {
 		scale: 0.85;
 		position: fixed;
 	}
+	.pomodoroCont {
+		transform-origin: top left;
+		scale: 0.8;
+	}
+	.pomodoro-container {
+		transform-origin: top left;
+		scale: 0.85;
+		position: fixed;
+	}
 	.googleAppsCont {
 		transform-origin: top right;
 		scale: 0.8;
@@ -5414,3 +5424,292 @@ body[data-bg="wallpaper"] .dropdown-content {
 	color: var(--darkColor-dark);
 }
 /* ------------ End of Toast---------- */
+
+/* -------------------------------------- Pomodoro Timer --------------------------------------- */
+
+.pomodoroCont {
+	position: fixed;
+	display: inline-block;
+	margin: 10px;
+	top: var(--gap);
+	inset-inline-start: calc(2 * var(--gap) + 36px);
+	font-size: 25px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.pomodoroCont:hover .tooltip-text {
+	visibility: visible;
+	opacity: 1;
+}
+
+.pomodoroCont svg {
+	transition: all 0.3s ease;
+}
+
+.pomodoroCont.menu-open svg {
+	transform: scale(0.9);
+}
+
+.pomodoro-container {
+	display: grid;
+	gap: 10px;
+	padding: 12px 6px 6px 6px;
+	background-color: var(--accentLightTint-blue);
+	background-color: color-mix(
+		in srgb,
+		var(--accentLightTint-blue) calc(var(--container-opacity, 1) * 100%),
+		transparent
+	);
+	backdrop-filter: blur(var(--container-blur, 10px));
+	-webkit-backdrop-filter: blur(var(--container-blur, 10px));
+	border-radius: 20px;
+	width: 310px;
+	min-height: 300px;
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+	position: fixed;
+	top: calc(var(--gap) + 56px);
+	inset-inline-start: calc(2 * var(--gap) + 36px);
+	z-index: 3;
+	animation: none;
+	transform-origin: top left;
+}
+
+.pomodoro-container::-webkit-scrollbar {
+	width: 5px;
+}
+
+.pomodoro-container::-webkit-scrollbar-track {
+	background-color: transparent;
+	margin-top: 78px;
+	margin-bottom: 11px;
+}
+
+.pomodoro-container::-webkit-scrollbar-thumb {
+	background-color: var(--darkColor-blue);
+	border-radius: 3px;
+}
+
+.pomodoro-container::-webkit-scrollbar-thumb:hover {
+	background-color: var(--darkerColor-blue);
+	border-radius: 3px;
+}
+
+/* For Firefox */
+@supports (-moz-appearance: none) {
+	.pomodoro-container {
+		scrollbar-width: thin;
+		scrollbar-color: var(--darkColor-blue) transparent;
+	}
+}
+
+.pomodoro-container h2 {
+	font-family: "poppins", sans-serif;
+	font-size: 1.2rem;
+	font-weight: 600;
+	text-align: center;
+	color: var(--textColorDark-blue);
+	margin-bottom: 5px;
+}
+
+.pomodoro-timer-display {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pomodoro-timer-display span {
+	font-size: 3.5rem;
+	font-weight: 700;
+	color: var(--darkColor-blue);
+	letter-spacing: 2px;
+}
+
+.pomodoro-indicators {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	margin: 8px 0;
+}
+
+.pomodoro-indicator {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: color-mix(in srgb, var(--darkColor-blue) 30%, transparent);
+	border: 2px solid var(--darkColor-blue);
+	transition: all 0.3s ease;
+}
+
+.pomodoro-indicator.active {
+	background-color: var(--darkColor-blue);
+}
+
+.pomodoro-mode-label {
+	display: block;
+	text-align: center;
+	font-size: 0.9rem;
+	color: var(--textColorDark-blue);
+	opacity: 0.8;
+	margin-bottom: 12px;
+}
+
+.pomodoro-controls {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 8px;
+}
+
+.pomodoro-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	padding: 10px 16px;
+	border: none;
+	border-radius: 20px;
+	font-size: 0.9rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	background-color: white;
+	color: var(--textColorDark-blue);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pomodoro-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pomodoro-btn:active {
+	transform: translateY(0);
+}
+
+.pomodoro-btn-primary {
+	background-color: var(--darkColor-blue);
+	color: white;
+}
+
+.pomodoro-btn-primary:hover {
+	background-color: var(--darkerColor-blue);
+}
+
+.pomodoro-btn-secondary {
+	display: block;
+	margin: 0 auto;
+	padding: 8px 16px;
+	background-color: color-mix(in srgb, var(--darkColor-blue) 15%, white);
+}
+
+.pomodoro-btn-secondary:hover {
+	background-color: color-mix(in srgb, var(--darkColor-blue) 25%, white);
+}
+
+.pomodoro-settings {
+	border-top: 1px solid color-mix(in srgb, var(--darkColor-blue) 30%, transparent);
+	padding-top: 12px;
+	margin-top: 8px;
+}
+
+.pomodoro-settings h3 {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--textColorDark-blue);
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.pomodoro-setting-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 8px;
+	padding: 0 8px;
+}
+
+.pomodoro-setting-row label {
+	font-size: 0.85rem;
+	color: var(--textColorDark-blue);
+	flex: 1;
+}
+
+.pomodoro-setting-row input {
+	width: 50px;
+	padding: 4px 8px;
+	border: 1px solid color-mix(in srgb, var(--darkColor-blue) 40%, transparent);
+	border-radius: 8px;
+	text-align: center;
+	font-size: 0.85rem;
+	background-color: white;
+	color: var(--textColorDark-blue);
+}
+
+.pomodoro-setting-row input:focus {
+	outline: none;
+	border-color: var(--darkColor-blue);
+}
+
+.pomodoro-setting-row span {
+	font-size: 0.8rem;
+	color: var(--textColorDark-blue);
+	opacity: 0.7;
+	min-width: 45px;
+	text-align: left;
+}
+
+/* Dark theme adjustments */
+.black-theme .pomodoro-container {
+	background-color: var(--accentLightTint-dark);
+}
+
+.black-theme .pomodoro-container h2,
+.black-theme .pomodoro-mode-label,
+.black-theme .pomodoro-setting-row label,
+.black-theme .pomodoro-setting-row span {
+	color: var(--darkColor-dark);
+}
+
+.black-theme .pomodoro-timer-display span {
+	color: var(--darkColor-dark);
+}
+
+.black-theme .pomodoro-btn {
+	background-color: var(--bg-color-dark);
+	color: var(--textColorLight-dark);
+}
+
+.black-theme .pomodoro-btn:hover {
+	background-color: color-mix(in srgb, var(--darkColor-dark) 20%, var(--bg-color-dark));
+}
+
+.black-theme .pomodoro-btn svg {
+	color: var(--textColorLight-dark);
+}
+
+.black-theme .pomodoro-setting-row input {
+	background-color: var(--bg-color-dark);
+	border-color: var(--darkColor-dark);
+	color: var(--textColorLight-dark);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+	.pomodoro-container {
+		transform-origin: top left;
+		scale: 0.85;
+		position: fixed;
+	}
+
+	.pomodoro-timer-display span {
+		font-size: 3rem;
+	}
+
+	.pomodoro-btn {
+		padding: 8px 12px;
+		font-size: 0.85rem;
+	}
+}

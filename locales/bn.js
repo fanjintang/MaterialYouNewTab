@@ -37,6 +37,21 @@ const bn = {
     "todoListHover": "টু ডু লিস্ট",
     "todoPlaceholder": "টাস্ক যোগ করুন...",
 
+    // Pomodoro
+    "pomodoroText": "পোমোডোরো",
+    "pomodoroInfo": "পোমোডোরো টাইমার দেখান",
+    "pomodoroHover": "পোমোডোরো",
+    "pomodoroHeading": "পোমোডোরো",
+    "pomodoroStart": "শুরু করুন",
+    "pomodoroPause": "বিরতি দিন",
+    "pomodoroReset": "রিসেট করুন",
+    "pomodoroSkip": "এড়িয়ে যান",
+    "pomodoroWork": "ফোকাস সময়",
+    "pomodoroShortBreak": "স্বল্প বিরতি",
+    "pomodoroLongBreak": "দীর্ঘ বিরতি",
+    "pomodoroSettings": "টাইমার সেটিংস",
+    "pomodoroMinutes": "মিনিট",
+
     // Clock
     "hideClockBox": "ঘড়ি লুকান",
     "hideClockBoxInfo": "ঘড়ি এবং তারিখ দেখান বা লুকান",

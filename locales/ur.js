@@ -19,6 +19,21 @@ const ur = {
     "todoListText": "To Do List",
     "todoListInfo": "یومیہ ٹو ڈو لسٹ دکھائیں",
 
+    // Pomodoro
+    "pomodoroText": "پومودورو",
+    "pomodoroInfo": "پومودورو ٹائمر دکھائیں",
+    "pomodoroHover": "پومودورو",
+    "pomodoroHeading": "پومودورو",
+    "pomodoroStart": "شروع",
+    "pomodoroPause": "روکیں",
+    "pomodoroReset": "دوبارہ شروع",
+    "pomodoroSkip": "چھوڑیں",
+    "pomodoroWork": "توجہ کا وقت",
+    "pomodoroShortBreak": "مختصر وقفہ",
+    "pomodoroLongBreak": "طویل وقفہ",
+    "pomodoroSettings": "ٹائمر کی ترتیبات",
+    "pomodoroMinutes": "منٹ",
+
     // Digital Clock
     "digitalclocktitle": "ڈیجیٹل گھڑی",
     "digitalclockinfo": "ڈیجیٹل گھڑی پر جائیں",

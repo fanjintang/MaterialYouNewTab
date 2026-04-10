@@ -29,6 +29,21 @@ const vi = {
     "todoListHover": "Việc cần làm",
     "todoPlaceholder": "Thêm nhiệm vụ...",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Hiển thị bộ hẹn giờ Pomodoro",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Bắt đầu",
+    "pomodoroPause": "Tạm dừng",
+    "pomodoroReset": "Đặt lại",
+    "pomodoroSkip": "Bỏ qua",
+    "pomodoroWork": "Thời gian tập trung",
+    "pomodoroShortBreak": "Nghỉ ngắn",
+    "pomodoroLongBreak": "Nghỉ dài",
+    "pomodoroSettings": "Cài đặt bộ hẹn giờ",
+    "pomodoroMinutes": "phút",
+
     // Digital Clock
     "digitalclocktitle": "Đồng hồ kỹ thuật số",
     "digitalclockinfo": "Bật/tắt đồng hồ Kỹ thuật số",

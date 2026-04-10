@@ -37,6 +37,21 @@ const hi = {
     "todoListHover": "कार्य सूची",
     "todoPlaceholder": "कार्य जोड़ें...",
 
+    // Pomodoro
+    "pomodoroText": "पोमोडोरो",
+    "pomodoroInfo": "पोमोडोरो टाइमर दिखाएं",
+    "pomodoroHover": "पोमोडोरो",
+    "pomodoroHeading": "पोमोडोरो",
+    "pomodoroStart": "शुरू करें",
+    "pomodoroPause": "रोकें",
+    "pomodoroReset": "रीसेट करें",
+    "pomodoroSkip": "छोड़ें",
+    "pomodoroWork": "फोकस समय",
+    "pomodoroShortBreak": "छोटा ब्रेक",
+    "pomodoroLongBreak": "लंबा ब्रेक",
+    "pomodoroSettings": "टाइमर सेटिंग्स",
+    "pomodoroMinutes": "मिनट",
+
     // Clock
     "hideClockBox": "घड़ी छिपाएँ",
     "hideClockBoxInfo": "घड़ी और तारीख दिखाएँ या छिपाएँ",

@@ -29,6 +29,21 @@ const el = {
     "todoListHover": "Λίστα Εργασιών",
     "todoPlaceholder": "Προσθήκη εργασίας...",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Εμφάνιση χρονομέτρου Pomodoro",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Έναρξη",
+    "pomodoroPause": "Παύση",
+    "pomodoroReset": "Επαναφορά",
+    "pomodoroSkip": "Παράβλεψη",
+    "pomodoroWork": "Χρόνος εστίασης",
+    "pomodoroShortBreak": "Σύντομο διάλειμμα",
+    "pomodoroLongBreak": "Μεγάλο διάλειμμα",
+    "pomodoroSettings": "Ρυθμίσεις χρονομέτρου",
+    "pomodoroMinutes": "λεπτά",
+
     // Ρολόι
     "hideClockBox": "Απόκρυψη Ρολογιού",
     "hideClockBoxInfo": "Απόκρυψη ρολογιού και ημερομηνίας",

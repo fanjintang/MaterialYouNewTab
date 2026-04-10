@@ -37,6 +37,21 @@ const ru = {
     "todoListHover": "Список дел",
     "todoPlaceholder": "Добавить задачу...",
 
+    // Pomodoro
+    "pomodoroText": "Помодоро",
+    "pomodoroInfo": "Показать таймер Помодоро",
+    "pomodoroHover": "Помодоро",
+    "pomodoroHeading": "Помодоро",
+    "pomodoroStart": "Начать",
+    "pomodoroPause": "Пауза",
+    "pomodoroReset": "Сброс",
+    "pomodoroSkip": "Пропустить",
+    "pomodoroWork": "Время фокуса",
+    "pomodoroShortBreak": "Короткий перерыв",
+    "pomodoroLongBreak": "Длинный перерыв",
+    "pomodoroSettings": "Настройки таймера",
+    "pomodoroMinutes": "минут",
+
     // Clock
     "hideClockBox": "Скрыть часы",
     "hideClockBoxInfo": "Скрыть часы и дату",

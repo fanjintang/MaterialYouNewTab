@@ -37,6 +37,21 @@ const idn = {
     "todoListHover": "To-Do List",
     "todoPlaceholder": "Tambah tugas...",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Tampilkan timer Pomodoro",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Mulai",
+    "pomodoroPause": "Jeda",
+    "pomodoroReset": "Atur ulang",
+    "pomodoroSkip": "Lewati",
+    "pomodoroWork": "Waktu fokus",
+    "pomodoroShortBreak": "Istirahat pendek",
+    "pomodoroLongBreak": "Istirahat panjang",
+    "pomodoroSettings": "Pengaturan timer",
+    "pomodoroMinutes": "menit",
+
     // Clock
     "hideClockBox": "Sembunyikan Jam",
     "hideClockBoxInfo": "Tampilkan atau sembunyikan jam dan tanggal",

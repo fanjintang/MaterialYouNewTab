@@ -37,6 +37,21 @@ const cs = {
     "todoListHover": "Seznam úkolů",
     "todoPlaceholder": "Přidat úkol…",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Zobrazit Pomodoro časovač",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Spustit",
+    "pomodoroPause": "Pozastavit",
+    "pomodoroReset": "Resetovat",
+    "pomodoroSkip": "Přeskočit",
+    "pomodoroWork": "Čas soustředění",
+    "pomodoroShortBreak": "Krátká přestávka",
+    "pomodoroLongBreak": "Dlouhá přestávka",
+    "pomodoroSettings": "Nastavení časovače",
+    "pomodoroMinutes": "minut",
+
     // Clock
     "hideClockBox": "Skrýt hodiny",
     "hideClockBoxInfo": "Skryje hodiny a datum",

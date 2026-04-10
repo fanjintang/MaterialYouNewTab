@@ -29,6 +29,21 @@ const az = {
     // "todoListHover": "ToDo List",    // Keep this short
     // "todoPlaceholder": "Add task...",
 
+    // Pomodoro
+    "pomodoroText": "Pomodoro",
+    "pomodoroInfo": "Pomodoro taymerini göstər",
+    "pomodoroHover": "Pomodoro",
+    "pomodoroHeading": "Pomodoro",
+    "pomodoroStart": "Başla",
+    "pomodoroPause": "Dayandır",
+    "pomodoroReset": "Sıfırla",
+    "pomodoroSkip": "Keç",
+    "pomodoroWork": "Diqqət vaxtı",
+    "pomodoroShortBreak": "Qısa fasilə",
+    "pomodoroLongBreak": "Uzun fasilə",
+    "pomodoroSettings": "Taymer parametrləri",
+    "pomodoroMinutes": "dəqiqə",
+
     // Digital Clock
     "digitalclocktitle": "Rəqəmsal saat",
     "digitalclockinfo": "Rəqəmsal saata keç",

@@ -29,6 +29,21 @@ const ja = {
     "todoListHover": "To Doリスト",
     "todoPlaceholder": "タスクを追加...",
 
+    // Pomodoro
+    "pomodoroText": "ポモドーロ",
+    "pomodoroInfo": "ポモドーロタイマーを表示",
+    "pomodoroHover": "ポモドーロ",
+    "pomodoroHeading": "ポモドーロ",
+    "pomodoroStart": "開始",
+    "pomodoroPause": "一時停止",
+    "pomodoroReset": "リセット",
+    "pomodoroSkip": "スキップ",
+    "pomodoroWork": "集中時間",
+    "pomodoroShortBreak": "短い休憩",
+    "pomodoroLongBreak": "長い休憩",
+    "pomodoroSettings": "タイマー設定",
+    "pomodoroMinutes": "分",
+
     // Clock
     "hideClockBox": "時計を非表示",
     "hideClockBoxInfo": "時計と日付を非表示にする",

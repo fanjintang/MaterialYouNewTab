@@ -29,6 +29,21 @@ const th = {
     "todoListHover": "ToDo List",
     "todoPlaceholder": "เพิ่มรายการ...",
 
+    // Pomodoro
+    "pomodoroText": "โพมาโดโร",
+    "pomodoroInfo": "แสดงตัวจับเวลาโพมาโดโร",
+    "pomodoroHover": "โพมาโดโร",
+    "pomodoroHeading": "โพมาโดโร",
+    "pomodoroStart": "เริ่ม",
+    "pomodoroPause": "หยุดชั่วคราว",
+    "pomodoroReset": "รีเซ็ต",
+    "pomodoroSkip": "ข้าม",
+    "pomodoroWork": "เวลาทำงาน",
+    "pomodoroShortBreak": "พักเบรคสั้น",
+    "pomodoroLongBreak": "พักเบรคยาว",
+    "pomodoroSettings": "ตั้งค่าตัวจับเวลา",
+    "pomodoroMinutes": "นาที",
+
     // Clock
     "hideClockBox": "ปิดการแสดงนาฬิกา",
     "hideClockBoxInfo": "ปิดการแสดงนาฬิกาและวันที่",
