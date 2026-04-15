@@ -98,10 +98,40 @@
         <h2 id="todoListHeading">To Do List</h2>
         <div class="addTaskCont">
             <input id="todoInput" placeholder="Add task..." type="text" autocomplete="off">
-            <div class="searchControls">
-                <!-- Add Button -->
+            <div class="task-controls">
+                <select id="todoCategory">
+                    <option value="未分类">未分类</option>
+                    <option value="工作">工作</option>
+                    <option value="生活">生活</option>
+                    <option value="学习">学习</option>
+                    <option value="其他">其他</option>
+                </select>
+                <select id="todoPriority">
+                    <option value="中">中</option>
+                    <option value="高">高</option>
+                    <option value="低">低</option>
+                </select>
+                <input type="date" id="todoDueDate" placeholder="截止日期">
                 <button id="todoAdd">+</button>
             </div>
+        </div>
+        <div class="todo-actions">
+            <button id="todoImport">导入</button>
+            <button id="todoExport">导出</button>
+        </div>
+        <div class="todo-filters">
+            <select id="todoFilter">
+                <option value="all">全部</option>
+                <option value="pending">未完成</option>
+                <option value="completed">已完成</option>
+                <option value="overdue">逾期</option>
+                <option value="today">今日待办</option>
+            </select>
+            <select id="todoSort">
+                <option value="created">创建时间</option>
+                <option value="priority">优先级</option>
+                <option value="due">截止时间</option>
+            </select>
         </div>
         <ul class="todolist" id="todoullist">
         </ul>
