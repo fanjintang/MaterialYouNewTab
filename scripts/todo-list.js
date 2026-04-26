@@ -579,7 +579,17 @@ function importTodoData() {
                     const importedData = JSON.parse(e.target.result);
                     // Merge imported data with existing data
                     for (let id in importedData) {
-                        todoList[id] = importedData[id];
+                        // 确保导入的数据包含所有必要的字段
+                        const todo = importedData[id];
+                        todoList[id] = {
+                            title: todo.title || "",
+                            status: todo.status || "pending",
+                            pinned: todo.pinned || false,
+                            category: todo.category || "未分类",
+                            priority: todo.priority || "中",
+                            createdAt: todo.createdAt || new Date().toISOString(),
+                            dueDate: todo.dueDate || null
+                        };
                     }
                     SaveToDoData();
                     todoulList.innerHTML = '';
