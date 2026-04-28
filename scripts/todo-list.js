@@ -17,6 +17,84 @@ let todoList = {}; // Initialize todoList JSON
 let suppressNextClick = false;
 let suppressTimeout = null;
 
+// Category and Priority translation keys (internal storage keys)
+const categoryKeys = ["uncategorized", "work", "life", "study", "other"];
+const priorityKeys = ["high", "medium", "low"];
+
+// Mapping for backward compatibility with old Chinese data
+const legacyCategoryMap = {
+    "未分类": "uncategorized",
+    "工作": "work",
+    "生活": "life",
+    "学习": "study",
+    "其他": "other"
+};
+
+const legacyPriorityMap = {
+    "高": "high",
+    "中": "medium",
+    "低": "low"
+};
+
+// Function to get translated text for todo items
+function getTodoTranslation(key, fallback) {
+    const savedLanguage = localStorage.getItem("selectedLanguage") || "en";
+    return translations[savedLanguage]?.[key] || translations["en"]?.[key] || fallback;
+}
+
+// Function to get category display text by key
+function getCategoryText(categoryKey) {
+    const keyMap = {
+        "uncategorized": "todoCategoryUncategorized",
+        "work": "todoCategoryWork",
+        "life": "todoCategoryLife",
+        "study": "todoCategoryStudy",
+        "other": "todoCategoryOther"
+    };
+    return getTodoTranslation(keyMap[categoryKey] || keyMap["uncategorized"], "Uncategorized");
+}
+
+// Function to get priority display text by key
+function getPriorityText(priorityKey) {
+    const keyMap = {
+        "high": "todoPriorityHigh",
+        "medium": "todoPriorityMedium",
+        "low": "todoPriorityLow"
+    };
+    return getTodoTranslation(keyMap[priorityKey] || keyMap["medium"], "Medium");
+}
+
+// Function to get all categories for the current language
+function getCategories() {
+    return categoryKeys.map(key => ({
+        key: key,
+        text: getCategoryText(key)
+    }));
+}
+
+// Function to get all priorities for the current language
+function getPriorities() {
+    return priorityKeys.map(key => ({
+        key: key,
+        text: getPriorityText(key)
+    }));
+}
+
+// Function to migrate legacy data to new format
+function migrateLegacyData(data) {
+    if (!data) return {};
+    const migrated = {};
+    for (const id in data) {
+        const item = data[id];
+        migrated[id] = {
+            ...item,
+            category: legacyCategoryMap[item.category] || item.category || "uncategorized",
+            priority: legacyPriorityMap[item.priority] || item.priority || "medium"
+        };
+    }
+    return migrated;
+}
+
 // Add event listeners for Add button click or Enter key press
 todoAdd.addEventListener("click", addtodoItem);
 todoInput.addEventListener("keypress", (event) => {
@@ -43,8 +121,9 @@ function addtodoItem() {
     const categorySelect = document.getElementById('todoCategory');
     const prioritySelect = document.getElementById('todoPriority');
     const dueDateInput = document.getElementById('todoDueDate');
-    const category = categorySelect ? categorySelect.value : "未分类";
-    const priority = prioritySelect ? prioritySelect.value : "中";
+    // Use translation keys instead of hardcoded text
+    const category = categorySelect ? categorySelect.value : "uncategorized";
+    const priority = prioritySelect ? prioritySelect.value : "medium";
     let dueDate = null;
     if (dueDateInput && dueDateInput.value) {
         // 处理时区问题，确保日期正确
@@ -82,14 +161,14 @@ function createTodoItemDOM(id, title, status, pinned, category, priority, dueDat
     const taskMeta = document.createElement("div");
     taskMeta.className = "task-meta";
     
-    // Add category and priority
+    // Add category and priority with translated text
     const categoryBadge = document.createElement("span");
     categoryBadge.className = "category-badge";
-    categoryBadge.textContent = category;
+    categoryBadge.textContent = getCategoryText(category);
     
     const priorityBadge = document.createElement("span");
     priorityBadge.className = `priority-badge priority-${priority}`;
-    priorityBadge.textContent = priority;
+    priorityBadge.textContent = getPriorityText(priority);
     
     taskMeta.appendChild(categoryBadge);
     taskMeta.appendChild(priorityBadge);
@@ -178,8 +257,9 @@ todoulList.addEventListener("click", (event) => {
         const id = li.dataset.todoitem;
         const todo = todoList[id];
         const previousTitle = todo.title;
-        const previousCategory = todo.category || "未分类";
-        const previousPriority = todo.priority || "中";
+        // Use translation keys internally
+        const previousCategory = todo.category || "uncategorized";
+        const previousPriority = todo.priority || "medium";
         const previousDueDate = todo.dueDate ? new Date(todo.dueDate).toISOString().split('T')[0] : "";
 
         li.classList.toggle("edit");
@@ -201,29 +281,29 @@ todoulList.addEventListener("click", (event) => {
             input.className = "edit-input";
             input.value = previousTitle;
             
-            // Create category select
+            // Create category select with translation keys
             const categorySelect = document.createElement("select");
             categorySelect.className = "todo-category-select";
-            const categories = ["未分类", "工作", "生活", "学习", "其他"];
+            const categories = getCategories();
             categories.forEach(cat => {
                 const option = document.createElement("option");
-                option.value = cat;
-                option.textContent = cat;
-                if (cat === previousCategory) {
+                option.value = cat.key;
+                option.textContent = cat.text;
+                if (cat.key === previousCategory) {
                     option.selected = true;
                 }
                 categorySelect.appendChild(option);
             });
             
-            // Create priority select
+            // Create priority select with translation keys
             const prioritySelect = document.createElement("select");
             prioritySelect.className = "todo-priority-select";
-            const priorities = ["高", "中", "低"];
+            const priorities = getPriorities();
             priorities.forEach(pri => {
                 const option = document.createElement("option");
-                option.value = pri;
-                option.textContent = pri;
-                if (pri === previousPriority) {
+                option.value = pri.key;
+                option.textContent = pri.text;
+                if (pri.key === previousPriority) {
                     option.selected = true;
                 }
                 prioritySelect.appendChild(option);
@@ -274,11 +354,11 @@ todoulList.addEventListener("click", (event) => {
                 
                 const categoryBadge = document.createElement("span");
                 categoryBadge.className = "category-badge";
-                categoryBadge.textContent = todo.category;
+                categoryBadge.textContent = getCategoryText(todo.category);
                 
                 const priorityBadge = document.createElement("span");
                 priorityBadge.className = `priority-badge priority-${todo.priority}`;
-                priorityBadge.textContent = todo.priority;
+                priorityBadge.textContent = getPriorityText(todo.priority);
                 
                 newTaskMeta.appendChild(categoryBadge);
                 newTaskMeta.appendChild(priorityBadge);
@@ -337,11 +417,11 @@ todoulList.addEventListener("click", (event) => {
                     
                     const categoryBadge = document.createElement("span");
                     categoryBadge.className = "category-badge";
-                    categoryBadge.textContent = previousCategory;
+                    categoryBadge.textContent = getCategoryText(previousCategory);
                     
                     const priorityBadge = document.createElement("span");
                     priorityBadge.className = `priority-badge priority-${previousPriority}`;
-                    priorityBadge.textContent = previousPriority;
+                    priorityBadge.textContent = getPriorityText(previousPriority);
                     
                     newTaskMeta.appendChild(categoryBadge);
                     newTaskMeta.appendChild(priorityBadge);
@@ -408,11 +488,29 @@ function ShowToDoList() {
     try {
         if (typeof chrome !== "undefined" && chrome.storage) {
             chrome.storage.local.get("todoList", (result) => {
-                todoList = result.todoList || {}; // Parse stored data or initialize empty
+                let data = result.todoList || {};
+                // Migrate legacy data if needed
+                const needsMigration = Object.values(data).some(todo => 
+                    legacyCategoryMap[todo.category] || legacyPriorityMap[todo.priority]
+                );
+                if (needsMigration) {
+                    data = migrateLegacyData(data);
+                    SaveToDoData();
+                }
+                todoList = data;
                 renderTodoList();
             });
         } else {
-            todoList = JSON.parse(localStorage.getItem("todoList")) || {}; // Parse stored data or initialize empty
+            let data = JSON.parse(localStorage.getItem("todoList")) || {};
+            // Migrate legacy data if needed
+            const needsMigration = Object.values(data).some(todo => 
+                legacyCategoryMap[todo.category] || legacyPriorityMap[todo.priority]
+            );
+            if (needsMigration) {
+                data = migrateLegacyData(data);
+                SaveToDoData();
+            }
+            todoList = data;
             renderTodoList();
         }
     } catch (error) {
@@ -442,9 +540,9 @@ function renderTodoList() {
     
     // Filter todos
     const filteredTodos = todoArray.filter(todo => {
-        // Ensure backward compatibility
-        const category = todo.category || "未分类";
-        const priority = todo.priority || "中";
+        // Use translation keys internally
+        const category = todo.category || "uncategorized";
+        const priority = todo.priority || "medium";
         const dueDate = todo.dueDate;
         
         // Check filter condition
@@ -477,8 +575,8 @@ function renderTodoList() {
         if (sortOption === 'created') {
             return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
         } else if (sortOption === 'priority') {
-            const priorityOrder = { '高': 3, '中': 2, '低': 1 };
-            return (priorityOrder[b.priority || '中'] || 0) - (priorityOrder[a.priority || '中'] || 0);
+            const priorityOrder = { 'high': 3, 'medium': 2, 'low': 1 };
+            return (priorityOrder[b.priority || 'medium'] || 0) - (priorityOrder[a.priority || 'medium'] || 0);
         } else if (sortOption === 'due') {
             if (!a.dueDate && !b.dueDate) return 0;
             if (!a.dueDate) return 1;
@@ -490,9 +588,9 @@ function renderTodoList() {
     
     // Create DOM elements for filtered and sorted todos
     filteredTodos.forEach(todo => {
-        // Ensure backward compatibility
-        const category = todo.category || "未分类";
-        const priority = todo.priority || "中";
+        // Use translation keys internally
+        const category = todo.category || "uncategorized";
+        const priority = todo.priority || "medium";
         const dueDate = todo.dueDate;
         const li = createTodoItemDOM(todo.id, todo.title, todo.status, todo.pinned, category, priority, dueDate); // Create `li` elements
         fragment.appendChild(li); // Add `li` to the fragment
@@ -579,14 +677,14 @@ function importTodoData() {
                     const importedData = JSON.parse(e.target.result);
                     // Merge imported data with existing data
                     for (let id in importedData) {
-                        // 确保导入的数据包含所有必要的字段
+                        // 确保导入的数据包含所有必要的字段，使用翻译键
                         const todo = importedData[id];
                         todoList[id] = {
                             title: todo.title || "",
                             status: todo.status || "pending",
                             pinned: todo.pinned || false,
-                            category: todo.category || "未分类",
-                            priority: todo.priority || "中",
+                            category: todo.category || "uncategorized",
+                            priority: todo.priority || "medium",
                             createdAt: todo.createdAt || new Date().toISOString(),
                             dueDate: todo.dueDate || null
                         };
@@ -594,9 +692,9 @@ function importTodoData() {
                     SaveToDoData();
                     todoulList.innerHTML = '';
                     ShowToDoList();
-                    alert('导入成功！');
+                    alert(getTodoTranslation('todoImportSuccess', 'Import successful!'));
                 } catch (error) {
-                    alert('导入失败：无效的 JSON 文件');
+                    alert(getTodoTranslation('todoImportFailed', 'Import failed: Invalid JSON file'));
                     console.error('Error importing todo data:', error);
                 }
             };
@@ -657,8 +755,13 @@ function checkDueTasks() {
                 
                 // Check if task is due today or overdue
                 if (due <= today) {
-                    new Notification("待办事项提醒", {
-                        body: `任务 "${todo.title}" ${due < today ? "已逾期" : "今天到期"}`,
+                    const isOverdue = due < today;
+                    const notificationTitle = getTodoTranslation('todoNotificationTitle', 'To Do Reminder');
+                    const dueStatus = isOverdue 
+                        ? getTodoTranslation('todoDueOverdue', 'Overdue')
+                        : getTodoTranslation('todoDueToday', 'Due today');
+                    new Notification(notificationTitle, {
+                        body: `Task "${todo.title}" - ${dueStatus}`,
                         icon: "./favicon/icon48.png"
                     });
                 }

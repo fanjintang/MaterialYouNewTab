@@ -1,10 +1,37 @@
 // Background service worker for Material You New Tab
 
+// Translations for background script
+const bgTranslations = {
+    en: {
+        addTodo: "Add to To Do List",
+        notificationTitle: "To Do Reminder",
+        overdue: "Overdue",
+        dueToday: "Due today"
+    },
+    zh: {
+        addTodo: "添加为待办事项",
+        notificationTitle: "待办事项提醒",
+        overdue: "已逾期",
+        dueToday: "今天到期"
+    }
+};
+
+// Get current language from localStorage
+function getBackgroundLanguage() {
+    return localStorage.getItem("selectedLanguage") || "en";
+}
+
+// Get translation for background
+function getBgTranslation(key) {
+    const lang = getBackgroundLanguage();
+    return bgTranslations[lang]?.[key] || bgTranslations["en"][key];
+}
+
 // Create context menu for adding selected text as todo
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
         id: "addTodo",
-        title: "添加为待办事项",
+        title: getBgTranslation("addTodo"),
         contexts: ["selection"]
     });
 });
@@ -16,14 +43,14 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         chrome.storage.local.get("todoList", (result) => {
             const todoList = result.todoList || {};
             
-            // Create new todo item
+            // Create new todo item (use translation keys internally)
             const id = "t" + Date.now();
             todoList[id] = {
                 title: info.selectionText,
                 status: "pending",
                 pinned: false,
-                category: "未分类",
-                priority: "中",
+                category: "uncategorized",
+                priority: "medium",
                 createdAt: new Date().toISOString(),
                 dueDate: null
             };
@@ -85,11 +112,12 @@ function checkDueTasks() {
                 
                 // Check if task is due today or overdue
                 if (due <= today) {
+                    const isOverdue = due < today;
                     chrome.notifications.create({
                         type: "basic",
                         iconUrl: "./favicon/icon48.png",
-                        title: "待办事项提醒",
-                        message: `任务 "${todo.title}" ${due < today ? "已逾期" : "今天到期"}`
+                        title: getBgTranslation("notificationTitle"),
+                        message: `Task "${todo.title}" - ${isOverdue ? getBgTranslation("overdue") : getBgTranslation("dueToday")}`
                     });
                 }
             }

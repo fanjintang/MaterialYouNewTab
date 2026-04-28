@@ -133,6 +133,15 @@ function applyLanguage(lang) {
         "googleAppsMenuInfo",
         "todoListText",
         "todoListInfo",
+        // To-do List translations
+        "todoFilterAll",
+        "todoFilterPending",
+        "todoFilterCompleted",
+        "todoFilterOverdue",
+        "todoFilterToday",
+        "todoSortCreated",
+        "todoSortPriority",
+        "todoSortDue",
         "fahrenheitCelsiusCheckbox",
         "fahrenheitCelsiusText",
         "minMaxTempText",
@@ -383,9 +392,83 @@ function applyLanguage(lang) {
     // quotesText.style.textAlign = isRTL ? "right" : "left";
     quotesText.style.fontFamily = commonFontStack;
 
+    // Update todo list select options
+    updateTodoOptions(lang);
+
     // Save the selected language in localStorage
     document.documentElement.lang = currentLanguage;
     saveLanguageStatus("selectedLanguage", lang);
+}
+
+// Function to update todo list options with translations
+function updateTodoOptions(lang) {
+    const translation = translations[lang] || translations["en"];
+    
+    // Update category options
+    const categorySelect = document.getElementById("todoCategory");
+    if (categorySelect) {
+        const categoryMap = {
+            "uncategorized": translation.todoCategoryUncategorized || translations["en"].todoCategoryUncategorized,
+            "work": translation.todoCategoryWork || translations["en"].todoCategoryWork,
+            "life": translation.todoCategoryLife || translations["en"].todoCategoryLife,
+            "study": translation.todoCategoryStudy || translations["en"].todoCategoryStudy,
+            "other": translation.todoCategoryOther || translations["en"].todoCategoryOther
+        };
+        categorySelect.querySelectorAll("option").forEach(option => {
+            option.textContent = categoryMap[option.value] || option.textContent;
+        });
+    }
+    
+    // Update priority options
+    const prioritySelect = document.getElementById("todoPriority");
+    if (prioritySelect) {
+        const priorityMap = {
+            "high": translation.todoPriorityHigh || translations["en"].todoPriorityHigh,
+            "medium": translation.todoPriorityMedium || translations["en"].todoPriorityMedium,
+            "low": translation.todoPriorityLow || translations["en"].todoPriorityLow
+        };
+        prioritySelect.querySelectorAll("option").forEach(option => {
+            option.textContent = priorityMap[option.value] || option.textContent;
+        });
+    }
+    
+    // Update filter options
+    const filterSelect = document.getElementById("todoFilter");
+    if (filterSelect) {
+        const filterMap = {
+            "all": translation.todoFilterAll || translations["en"].todoFilterAll,
+            "pending": translation.todoFilterPending || translations["en"].todoFilterPending,
+            "completed": translation.todoFilterCompleted || translations["en"].todoFilterCompleted,
+            "overdue": translation.todoFilterOverdue || translations["en"].todoFilterOverdue,
+            "today": translation.todoFilterToday || translations["en"].todoFilterToday
+        };
+        filterSelect.querySelectorAll("option").forEach(option => {
+            option.textContent = filterMap[option.value] || option.textContent;
+        });
+    }
+    
+    // Update sort options
+    const sortSelect = document.getElementById("todoSort");
+    if (sortSelect) {
+        const sortMap = {
+            "created": translation.todoSortCreated || translations["en"].todoSortCreated,
+            "priority": translation.todoSortPriority || translations["en"].todoSortPriority,
+            "due": translation.todoSortDue || translations["en"].todoSortDue
+        };
+        sortSelect.querySelectorAll("option").forEach(option => {
+            option.textContent = sortMap[option.value] || option.textContent;
+        });
+    }
+    
+    // Update import/export buttons
+    const importBtn = document.getElementById("todoImport");
+    if (importBtn) {
+        importBtn.textContent = translation.importText || translations["en"].importText;
+    }
+    const exportBtn = document.getElementById("todoExport");
+    if (exportBtn) {
+        exportBtn.textContent = translation.exportText || translations["en"].exportText;
+    }
 }
 
 // Detect language from navigator.language

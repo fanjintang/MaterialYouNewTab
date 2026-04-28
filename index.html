@@ -100,37 +100,37 @@
             <input id="todoInput" placeholder="Add task..." type="text" autocomplete="off">
             <div class="task-controls">
                 <select id="todoCategory">
-                    <option value="未分类">未分类</option>
-                    <option value="工作">工作</option>
-                    <option value="生活">生活</option>
-                    <option value="学习">学习</option>
-                    <option value="其他">其他</option>
+                    <option value="uncategorized" data-i18n="todoCategoryUncategorized">Uncategorized</option>
+                    <option value="work" data-i18n="todoCategoryWork">Work</option>
+                    <option value="life" data-i18n="todoCategoryLife">Life</option>
+                    <option value="study" data-i18n="todoCategoryStudy">Study</option>
+                    <option value="other" data-i18n="todoCategoryOther">Other</option>
                 </select>
                 <select id="todoPriority">
-                    <option value="中">中</option>
-                    <option value="高">高</option>
-                    <option value="低">低</option>
+                    <option value="medium" data-i18n="todoPriorityMedium">Medium</option>
+                    <option value="high" data-i18n="todoPriorityHigh">High</option>
+                    <option value="low" data-i18n="todoPriorityLow">Low</option>
                 </select>
                 <input type="date" id="todoDueDate" placeholder="截止日期">
                 <button id="todoAdd">+</button>
             </div>
         </div>
         <div class="todo-actions">
-            <button id="todoImport">导入</button>
-            <button id="todoExport">导出</button>
+            <button id="todoImport" data-i18n="importText">Import</button>
+            <button id="todoExport" data-i18n="exportText">Export</button>
         </div>
         <div class="todo-filters">
             <select id="todoFilter">
-                <option value="all">全部</option>
-                <option value="pending">未完成</option>
-                <option value="completed">已完成</option>
-                <option value="overdue">逾期</option>
-                <option value="today">今日待办</option>
+                <option value="all" data-i18n="todoFilterAll">All</option>
+                <option value="pending" data-i18n="todoFilterPending">Pending</option>
+                <option value="completed" data-i18n="todoFilterCompleted">Completed</option>
+                <option value="overdue" data-i18n="todoFilterOverdue">Overdue</option>
+                <option value="today" data-i18n="todoFilterToday">Today</option>
             </select>
             <select id="todoSort">
-                <option value="created">创建时间</option>
-                <option value="priority">优先级</option>
-                <option value="due">截止时间</option>
+                <option value="created" data-i18n="todoSortCreated">Created</option>
+                <option value="priority" data-i18n="todoSortPriority">Priority</option>
+                <option value="due" data-i18n="todoSortDue">Due Date</option>
             </select>
         </div>
         <ul class="todolist" id="todoullist">

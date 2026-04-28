@@ -1175,8 +1175,8 @@ body #bookmarkButton.bookmark-button.rotate {
 	border-radius: 30px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 	border: 8px solid var(--bg-color-blue);
-	grid-template-columns: 330px;
-	justify-items: center;
+	grid-template-columns: auto;
+	justify-items: stretch;
 	position: fixed;
 	top: 85px;
 	left: 15px;
@@ -1241,8 +1241,10 @@ body #bookmarkButton.bookmark-button.rotate {
 }
 
 .todo-filters select {
-	flex: 1;
-	padding: 5px;
+	flex: 0 0 auto;
+	width: auto;
+	min-width: 0;
+	padding: 5px 8px;
 	background-color: var(--darkColor-blue);
 	background-color: color-mix(in srgb, var(--darkColor-blue) 90%, transparent);
 	color: var(--whitishColor-blue);
@@ -1250,6 +1252,7 @@ body #bookmarkButton.bookmark-button.rotate {
 	border-radius: 5px;
 	font-size: 0.8rem;
 	cursor: pointer;
+	white-space: nowrap;
 }
 
 .todo-filters select option {
@@ -1269,7 +1272,10 @@ body #bookmarkButton.bookmark-button.rotate {
 .todo-category-select,
 .todo-priority-select,
 .todo-due-date-input {
-	flex: 1;
+	flex: 0 0 auto;
+	width: auto;
+	min-width: 0;
+	max-width: none;
 	padding: 3px 6px;
 	background-color: var(--darkColor-blue);
 	background-color: color-mix(in srgb, var(--darkColor-blue) 90%, transparent);
@@ -1277,6 +1283,7 @@ body #bookmarkButton.bookmark-button.rotate {
 	border: 1px solid var(--bg-color-blue);
 	border-radius: 3px;
 	font-size: 0.8rem;
+	white-space: nowrap;
 }
 
 .edit-input {
@@ -1351,19 +1358,23 @@ body #bookmarkButton.bookmark-button.rotate {
 
 .task-controls {
 	display: flex;
-	gap: 6px;
+	gap: 4px;
 	align-items: center;
 }
 
 .task-controls select,
 .task-controls input[type="date"] {
-	flex: 1;
+	flex: 0 0 auto;
+	width: auto;
+	min-width: 0;
+	max-width: none;
 	padding: 3px 8px;
 	background-color: rgba(255, 255, 255, 0.8);
 	color: var(--darkColor-blue);
 	border: 1px solid var(--bg-color-blue);
 	border-radius: 12px;
 	font-size: 0.7rem;
+	white-space: nowrap;
 }
 
 .task-controls select option {
