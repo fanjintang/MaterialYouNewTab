@@ -370,7 +370,6 @@ body[data-bg="wallpaper"][sysTheme="systemDark"]:has(
 /* Styling for the SVG icon */
 .dot-icon {
 	fill: var(--darkColor-blue);
-	color: var(--darkColor-blue);
 	/* Icon color */
 	background-color: var(--accentLightTint-blue);
 	border-radius: 25%;
@@ -1176,8 +1175,8 @@ body #bookmarkButton.bookmark-button.rotate {
 	border-radius: 30px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 	border: 8px solid var(--bg-color-blue);
-	grid-template-columns: 330px;
-	justify-items: center;
+	grid-template-columns: auto;
+	justify-items: stretch;
 	position: fixed;
 	top: 85px;
 	left: 15px;
@@ -1207,6 +1206,96 @@ body #bookmarkButton.bookmark-button.rotate {
 .todo-container::-webkit-scrollbar-thumb:hover {
 	background-color: var(--darkerColor-blue);
 	border-radius: 3px;
+}
+
+.todo-actions {
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+	width: 100%;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+.todo-actions button {
+	padding: 5px 10px;
+	background-color: var(--accent-color-blue);
+	color: var(--whitishColor-blue);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 0.8rem;
+	transition: background-color 0.2s ease;
+}
+
+.todo-actions button:hover {
+	background-color: color-mix(in srgb, var(--accent-color-blue) 80%, white);
+}
+
+.todo-filters {
+	display: flex;
+	gap: 10px;
+	width: 100%;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+.todo-filters select {
+	flex: 0 0 auto;
+	width: auto;
+	min-width: 0;
+	padding: 5px 8px;
+	background-color: var(--darkColor-blue);
+	background-color: color-mix(in srgb, var(--darkColor-blue) 90%, transparent);
+	color: var(--whitishColor-blue);
+	border: 1px solid var(--bg-color-blue);
+	border-radius: 5px;
+	font-size: 0.8rem;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.todo-filters select option {
+	background-color: var(--bg-color-blue);
+	color: var(--whitishColor-blue);
+}
+
+/* Edit controls styles */
+.todo-edit-controls {
+	display: flex;
+	gap: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+.todo-category-select,
+.todo-priority-select,
+.todo-due-date-input {
+	flex: 0 0 auto;
+	width: auto;
+	min-width: 0;
+	max-width: none;
+	padding: 3px 6px;
+	background-color: var(--darkColor-blue);
+	background-color: color-mix(in srgb, var(--darkColor-blue) 90%, transparent);
+	color: var(--whitishColor-blue);
+	border: 1px solid var(--bg-color-blue);
+	border-radius: 3px;
+	font-size: 0.8rem;
+	white-space: nowrap;
+}
+
+.edit-input {
+	width: 100%;
+	padding: 5px;
+	background-color: var(--darkColor-blue);
+	background-color: color-mix(in srgb, var(--darkColor-blue) 90%, transparent);
+	color: var(--whitishColor-blue);
+	border: 1px solid var(--bg-color-blue);
+	border-radius: 3px;
+	font-size: 1rem;
+	margin-bottom: 5px;
 }
 
 /* For Firefox */
@@ -1245,13 +1334,13 @@ body #bookmarkButton.bookmark-button.rotate {
 .todo-container .addTaskCont {
 	background: white;
 	background-color: color-mix(in srgb, var(--accentLightTint-blue) 10%, white);
-	padding: 0;
+	padding: 10px;
 	margin-bottom: 4px;
 	border-radius: 20px;
-	height: 42px;
 	width: 100%;
 	display: flex;
-	align-items: center;
+	flex-direction: column;
+	gap: 10px;
 	outline: none;
 }
 
@@ -1267,15 +1356,79 @@ body #bookmarkButton.bookmark-button.rotate {
 	outline: 1px solid var(--accentLightTint-dark);
 }
 
-#todoAdd {
-	height: 100%;
-	border-radius: 20px;
-	padding: 0 12px;
-	border: none;
-	font-size: 1.8rem;
+.task-controls {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}
+
+.task-controls select,
+.task-controls input[type="date"] {
+	flex: 0 0 auto;
+	width: auto;
+	min-width: 0;
+	max-width: none;
+	padding: 3px 8px;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: var(--darkColor-blue);
+	border: 1px solid var(--bg-color-blue);
+	border-radius: 12px;
+	font-size: 0.7rem;
+	white-space: nowrap;
+}
+
+.task-controls select option {
+	background-color: white;
+	color: var(--darkColor-blue);
+}
+
+.task-controls button {
+	padding: 5px 15px;
 	background-color: var(--darkColor-blue);
 	color: white;
-	scale: 0.78;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+.task-controls button:hover {
+	background-color: var(--bg-color-blue);
+}
+
+/* Black theme styles */
+.black-theme .task-controls select,
+.black-theme .task-controls input[type="date"] {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: var(--whitishColor-blue);
+	border: 1px solid var(--accentLightTint-dark);
+}
+
+.black-theme .task-controls select option {
+	background-color: #333;
+	color: var(--whitishColor-blue);
+}
+
+.black-theme .task-controls button {
+	background-color: var(--accentLightTint-dark);
+	color: var(--whitishColor-blue);
+}
+
+.black-theme .task-controls button:hover {
+	background-color: var(--bg-color-dark);
+}
+
+#todoAdd {
+	padding: 3px 10px;
+	border-radius: 12px;
+	border: none;
+	font-size: 1.2rem;
+	background-color: var(--darkColor-blue);
+	color: white;
+	cursor: pointer;
+	min-width: 30px;
+	text-align: center;
 }
 
 #todoAdd:hover {
@@ -1324,6 +1477,7 @@ body #bookmarkButton.bookmark-button.rotate {
 .todolistitem {
 	width: 100%;
 	display: flex;
+	flex-direction: column;
 	background-color: var(--darkColor-blue);
 	background-color: color-mix(in srgb, var(--darkColor-blue) 95%, transparent);
 	color: var(--whitishColor-blue);
@@ -1337,6 +1491,54 @@ body #bookmarkButton.bookmark-button.rotate {
 	cursor: pointer;
 	position: relative;
 	word-break: break-word;
+}
+
+.task-content {
+	margin-bottom: 4px;
+}
+
+.task-meta {
+	display: flex;
+	gap: 8px;
+	font-size: 0.8rem;
+	opacity: 0.8;
+}
+
+.category-badge {
+	background-color: color-mix(in srgb, var(--bg-color-blue) 30%, transparent);
+	padding: 2px 8px;
+	border-radius: 10px;
+}
+
+.priority-badge {
+	padding: 2px 8px;
+	border-radius: 10px;
+}
+
+.priority-高 {
+	background-color: color-mix(in srgb, #ff4757 30%, transparent);
+}
+
+.priority-中 {
+	background-color: color-mix(in srgb, #ffa502 30%, transparent);
+}
+
+.priority-低 {
+	background-color: color-mix(in srgb, #2ed573 30%, transparent);
+}
+
+.due-date-badge {
+	background-color: color-mix(in srgb, var(--bg-color-cyan) 30%, transparent);
+	padding: 2px 8px;
+	border-radius: 10px;
+}
+
+.due-date-badge.overdue {
+	background-color: color-mix(in srgb, #ff4757 30%, transparent);
+}
+
+.due-date-badge.due-today {
+	background-color: color-mix(in srgb, #ffa502 30%, transparent);
 }
 
 .todolistitem::before {
@@ -4534,15 +4736,6 @@ body[data-bg="wallpaper"] .dropdown-content {
 		scale: 0.8;
 	}
 	.todo-container {
-		transform-origin: top left;
-		scale: 0.85;
-		position: fixed;
-	}
-	.pomodoroCont {
-		transform-origin: top left;
-		scale: 0.8;
-	}
-	.pomodoro-container {
 		transform-origin: top left;
 		scale: 0.85;
 		position: fixed;

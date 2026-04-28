@@ -15,7 +15,6 @@
     <meta name="google-site-verification" content="j8K161R-W9yVVDoylaoPd2twGbjToAC3EzAFfZU1YOY" />
     <title>New Tab</title>
     <link href="style.css" rel="stylesheet">
-    <link href="styles/new-features.css" rel="stylesheet">
     <link href="./favicon/icon48.png" id="favicon" rel="icon" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -43,14 +42,6 @@
     <script defer src="scripts/google-apps.js"></script>
     <script defer src="scripts/voice-search.js"></script>
     <script defer src="scripts/backup-restore.js"></script>
-    <!-- New Feature Scripts -->
-    <script defer src="scripts/keyboard-shortcuts.js"></script>
-    <script defer src="scripts/wallpaper-settings.js"></script>
-    <script defer src="scripts/font-customizer.js"></script>
-    <script defer src="scripts/date-reminders.js"></script>
-    <script defer src="scripts/ai-assistant.js"></script>
-    <script defer src="scripts/quick-tools.js"></script>
-    <script defer src="scripts/custom-widgets.js"></script>
 
     <!-- LANGUAGES SCRIPTS -->
     <script src="locales/pt.js"></script>
@@ -107,10 +98,40 @@
         <h2 id="todoListHeading">To Do List</h2>
         <div class="addTaskCont">
             <input id="todoInput" placeholder="Add task..." type="text" autocomplete="off">
-            <div class="searchControls">
-                <!-- Add Button -->
+            <div class="task-controls">
+                <select id="todoCategory">
+                    <option value="uncategorized" data-i18n="todoCategoryUncategorized">Uncategorized</option>
+                    <option value="work" data-i18n="todoCategoryWork">Work</option>
+                    <option value="life" data-i18n="todoCategoryLife">Life</option>
+                    <option value="study" data-i18n="todoCategoryStudy">Study</option>
+                    <option value="other" data-i18n="todoCategoryOther">Other</option>
+                </select>
+                <select id="todoPriority">
+                    <option value="medium" data-i18n="todoPriorityMedium">Medium</option>
+                    <option value="high" data-i18n="todoPriorityHigh">High</option>
+                    <option value="low" data-i18n="todoPriorityLow">Low</option>
+                </select>
+                <input type="date" id="todoDueDate" placeholder="截止日期">
                 <button id="todoAdd">+</button>
             </div>
+        </div>
+        <div class="todo-actions">
+            <button id="todoImport" data-i18n="importText">Import</button>
+            <button id="todoExport" data-i18n="exportText">Export</button>
+        </div>
+        <div class="todo-filters">
+            <select id="todoFilter">
+                <option value="all" data-i18n="todoFilterAll">All</option>
+                <option value="pending" data-i18n="todoFilterPending">Pending</option>
+                <option value="completed" data-i18n="todoFilterCompleted">Completed</option>
+                <option value="overdue" data-i18n="todoFilterOverdue">Overdue</option>
+                <option value="today" data-i18n="todoFilterToday">Today</option>
+            </select>
+            <select id="todoSort">
+                <option value="created" data-i18n="todoSortCreated">Created</option>
+                <option value="priority" data-i18n="todoSortPriority">Priority</option>
+                <option value="due" data-i18n="todoSortDue">Due Date</option>
+            </select>
         </div>
         <ul class="todolist" id="todoullist">
         </ul>
